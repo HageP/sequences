@@ -18,29 +18,16 @@
 <p>Now it’s your turn. Enter a number sequence in the boxes below, and we’ll tell you whether it satisfies the rule or not. You can test as many sequences as you want.</p>
 
 <ul>
-  <li>
-  <%=  @guess    %> <%=  @pattern    %>
-  </li>
-  <li>
-    3, 4, 5
+db:<%= Guess.all.inspect %>
+list:<%= @list.inspect %>
+  <% @list.each do |guess|  %>
+   <li>
+  <%=  guess.sequence_string   %>
+    </li>
+    <% end %>
 
-      Yes!
-  </li>
-  <li>
-    4, 4, 2
 
-      No.
-  </li>
-  <li>
-    3, 3, 3
 
-      No.
-  </li>
-  <li>
-    2, 3, 5
-
-      Yes!
-  </li>
 </ul>
 
 <form action="/all_guesses">
